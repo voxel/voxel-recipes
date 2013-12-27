@@ -1,0 +1,12 @@
+{
+    "name": "voxel-recipes",
+    "description": "central crafting recipe list",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:deathcap/voxel-recipes.git"
+    },
+    "dependencies": {
+        "craftingrecipes": "git://github.com/deathcap/craftingrecipes.git"
+    }
+}

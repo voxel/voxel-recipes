@@ -1,0 +1,6 @@
+# voxel-recipes
+
+## License
+
+MIT
+
