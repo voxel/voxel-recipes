@@ -7,6 +7,6 @@
         "url": "git@github.com:deathcap/voxel-recipes.git"
     },
     "dependencies": {
-        "craftingrecipes": "git://github.com/deathcap/craftingrecipes.git"
+        "craftingrecipes": "git://github.com/deathcap/craftingrecipes.git#86df77dd7faadea5b27acb45886ce80104b99892"
     }
 }
