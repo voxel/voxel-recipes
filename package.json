@@ -1,6 +1,6 @@
 {
     "name": "voxel-recipes",
-    "description": "central crafting recipe list",
+    "description": "crafting recipe list and thesaurus (voxel.js plugin)",
     "version": "0.0.1",
     "repository": {
         "type": "git",
