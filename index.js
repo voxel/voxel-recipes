@@ -7,6 +7,7 @@ module.exports = function(game, opts) {
 
 function RecipesPlugin(game, opts) {
   this.list = new craftingrecipes.RecipeList();
+  this.thesaurus = new craftingrecipes.CraftingThesaurus();
 }
 
 RecipesPlugin.prototype.register = function(recipe) {
