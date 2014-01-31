@@ -2,22 +2,30 @@
 var craftingrecipes = require('craftingrecipes');
 
 module.exports = function(game, opts) {
-  return new Recipes(game, opts);
+  return new RecipesPlugin(game, opts);
 };
 
-function Recipes(game, opts) {
-  this.list = new craftingrecipes.RecipeLocator();
+function RecipesPlugin(game, opts) {
+  this.list = new craftingrecipes.RecipeList();
 }
 
-Recipes.prototype.register = function(recipe) {
+RecipesPlugin.prototype.register = function(recipe) {
   return this.list.register(recipe);
 };
 
-Recipes.prototype.find = function(inventory) {
+RecipesPlugin.prototype.registerAmorphous = function(ingredients, result) {
+  return this.register(new craftingrecipes.AmorphousRecipe(ingredients, result));
+};
+
+RecipesPlugin.prototype.registerPositional = function(ingredients, result) {
+  return this.register(new craftingrecipes.PositionalRecipe(ingredients, result));
+};
+
+RecipesPlugin.prototype.find = function(inventory) {
   return this.list.find(inventory);
 };
 
-Recipes.prototype.craft = function(inventory) {
+RecipesPlugin.prototype.craft = function(inventory) {
   return this.list.craft(inventory);
 };
 
