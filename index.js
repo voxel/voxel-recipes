@@ -1,5 +1,6 @@
 
 var craftingrecipes = require('craftingrecipes');
+var ItemPile = require('itempile');
 
 module.exports = function(game, opts) {
   return new RecipesPlugin(game, opts);
@@ -15,11 +16,11 @@ RecipesPlugin.prototype.register = function(recipe) {
 };
 
 RecipesPlugin.prototype.registerAmorphous = function(ingredients, result) {
-  return this.register(new craftingrecipes.AmorphousRecipe(ingredients, result));
+  return this.register(new craftingrecipes.AmorphousRecipe(ingredients, ItemPile.fromArrayIfArray(result)));
 };
 
 RecipesPlugin.prototype.registerPositional = function(ingredients, result) {
-  return this.register(new craftingrecipes.PositionalRecipe(ingredients, result));
+  return this.register(new craftingrecipes.PositionalRecipe(ingredients, ItemPile.fromArrayIfArray(result)));
 };
 
 RecipesPlugin.prototype.find = function(inventory) {
