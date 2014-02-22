@@ -8,6 +8,7 @@ module.exports = function(game, opts) {
 
 function RecipesPlugin(game, opts) {
   this.craftList = new craftingrecipes.RecipeList();
+  this.smeltMap = {};
   this.thesaurus = new craftingrecipes.CraftingThesaurus();
 }
 
@@ -32,8 +33,15 @@ RecipesPlugin.prototype.craft = function(inventory) {
 };
 
 RecipesPlugin.prototype.registerSmelting = function(input, output) {
+  if (input in this.craftList)
+    console.log('WARNING: voxel-recipes registerSmelting overwriting recipes '+input+' -> '+output); // TODO: do we care?
 
+  this.craftList[input] = ItemPile.fromArrayIfArray(output);
 };
 
-RecipesPlugin.prototype.smelted = function(input) {
+RecipesPlugin.prototype.smelt = function(input) {
+  if (!input || !input.item) return undefined;
+
+  var output = this.craftList[input.item]; // TODO: smelting inputs of different stack sizes? (vs always 1)
+  return output ? output.clone() : undefined;
 };
