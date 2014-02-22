@@ -7,12 +7,12 @@ module.exports = function(game, opts) {
 };
 
 function RecipesPlugin(game, opts) {
-  this.list = new craftingrecipes.RecipeList();
+  this.craftList = new craftingrecipes.RecipeList();
   this.thesaurus = new craftingrecipes.CraftingThesaurus();
 }
 
 RecipesPlugin.prototype.register = function(recipe) {
-  return this.list.register(recipe);
+  return this.craftList.register(recipe);
 };
 
 RecipesPlugin.prototype.registerAmorphous = function(ingredients, result) {
@@ -24,10 +24,16 @@ RecipesPlugin.prototype.registerPositional = function(ingredients, result) {
 };
 
 RecipesPlugin.prototype.find = function(inventory) {
-  return this.list.find(inventory);
+  return this.craftList.find(inventory);
 };
 
 RecipesPlugin.prototype.craft = function(inventory) {
-  return this.list.craft(inventory);
+  return this.craftList.craft(inventory);
 };
 
+RecipesPlugin.prototype.registerSmelting = function(input, output) {
+
+};
+
+RecipesPlugin.prototype.smelted = function(input) {
+};
