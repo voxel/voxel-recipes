@@ -7,7 +7,7 @@
     "url": "git@github.com:deathcap/voxel-recipes.git"
   },
   "dependencies": {
-    "craftingrecipes": "~0.2.1",
+    "craftingrecipes": "~0.3.0",
     "itempile": "~0.2.0"
   }
 }
