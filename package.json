@@ -2,12 +2,19 @@
   "name": "voxel-recipes",
   "description": "crafting recipe list and thesaurus (voxel.js plugin)",
   "version": "0.3.0",
+  "main": "recipes.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:deathcap/voxel-recipes.git"
   },
+  "keywords": [
+    "voxel",
+    "plugin",
+    "recipes",
+    "crafting"
+  ],
   "dependencies": {
-    "craftingrecipes": "~0.3.0",
-    "itempile": "~0.2.0"
+    "craftingrecipes": "^0.3.0",
+    "itempile": "^0.2.2"
   }
 }
